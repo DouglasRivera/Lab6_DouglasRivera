@@ -5,6 +5,14 @@
  */
 package lab6_douglasrubi;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author river
@@ -22,7 +30,13 @@ public class Autos {
 
     public Autos() {
     }
+   
 
+    public Autos(int VIN, String Marca) {
+        this.VIN = VIN;
+        this.Marca = Marca;
+    }
+    
     public Autos(int VIN, String Marca, String Modelo, String TipoCarroceria, int CantPasajeros, int CapacidadMal, String Color, double Precio, int PotenciaMotor) {
         this.VIN = VIN;
         this.Marca = Marca;
@@ -109,7 +123,7 @@ public class Autos {
 
     @Override
     public String toString() {
-        return VIN + ":" + Modelo + ":";
+        return VIN + ":" + Modelo + ",";
     }
     
 }

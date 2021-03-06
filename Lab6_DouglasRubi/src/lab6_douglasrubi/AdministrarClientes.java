@@ -50,6 +50,29 @@ public class AdministrarClientes {
         this.ListaCliente.add(c);
     }
 
+    public void LeerArchivo() {
+        Scanner sc = null;
+        sc.useDelimiter(";");
+        while (sc.hasNext())
+        {
+            int IdCL = sc.nextInt();
+                    String NombreCL = sc.next();
+                    String NacionalidadCL = sc.next();
+                    String LugarTrabajoCL = sc.next();
+                    String Puesto_TrabajoCL = sc.next();
+                    String UserNameCL = sc.next();
+                    String ContraCL = sc.next();
+            String[] propiedadesAuto = sc.next().split(",");
+            for (int i = 0; i < propiedadesAuto.length; i++) {
+               String[] pa = propiedadesAuto[i].split(":");
+               Autos auto = new Autos(Integer.parseInt(pa[0]),pa[1]);
+            }
+            
+        }
+    }
+    
+    
+
     public void escribirArchivo() throws IOException {
         FileWriter fw = null;
         BufferedWriter bw = null;
@@ -64,7 +87,10 @@ public class AdministrarClientes {
                 bw.write(t.getPuesto_Trabajo() + ";");
                 bw.write(t.getUserName() + ";");
                 bw.write(t.getContra() + ";");
-                bw.write(t.getContra() + ";");
+                bw.write(t.getDineroActual() + ";");
+                for (Autos auto : t.getCar()) {
+                    bw.write(auto.toString());
+                }
             }
             bw.flush();
         } catch (Exception ex) {
@@ -89,8 +115,8 @@ public class AdministrarClientes {
                     String UserNameCL = sc.next();
                     String ContraCL = sc.next();
                     double DineroActualCL = sc.nextDouble();
-                    Cliente cl = new Cliente(IdCL, NombreCL, NacionalidadCL, LugarTrabajoCL,Puesto_TrabajoCL,UserNameCL,ContraCL,DineroActualCL
-                    ); 
+                    Cliente cl = new Cliente(IdCL, NombreCL, NacionalidadCL, LugarTrabajoCL, Puesto_TrabajoCL, UserNameCL, ContraCL, DineroActualCL
+                    );
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();

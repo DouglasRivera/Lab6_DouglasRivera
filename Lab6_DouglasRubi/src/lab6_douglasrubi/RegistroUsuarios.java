@@ -118,6 +118,10 @@ public class RegistroUsuarios extends javax.swing.JFrame {
         }
         if(Valido){
             //Pendiente de guardar en base de datos
+            File CarpetaUser = new File(Constantes.RutaRaiz+File.separator+txtNombre.getText().trim());
+            CarpetaUser.mkdir();
+            CarpetaUser = new File(Constantes.RutaRaiz+File.separator+txtNombre.getText().trim()+File.separator+Constantes.MisDocumentos);
+            CarpetaUser.mkdir();
             
         }
     }//GEN-LAST:event_jRegistrarActionPerformed

@@ -110,7 +110,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return Nombre + ":" + car;
+        return Nombre + ":" + car + ":";
     }
     
 }

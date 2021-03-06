@@ -179,9 +179,9 @@ public class Log extends javax.swing.JFrame {
         if (txtPass.getText() == null || "".equals(txtPass.getText())) {
             JOptionPane.showMessageDialog(this, "Ingresar una contraseña: ");
         }
-        if (txtUser.getText().equals("Osman") && txtPass.getText().equals("Omejia")) {
+        if (txtUser.getText().equals("Admin") && txtPass.getText().equals("Admin")) {
             this.dispose();
-            //new Administrador().setVisible(true);
+            new Menu_Admin().setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Ingresar el usuario o contraseña Incorrectos: ");
         }
